@@ -14,3 +14,14 @@ En el archivo javascript, lo primero que deberíamos hacer es isntanciar lo que 
 const app = new Vue({ Estas llaves se ponen para indicar un objeto, como ya vimos en el otro repositorio
 
 })
+
+Una de las cosas que nos permite vue js es poner bucles o sentencias condicionales dentro de las etiquetas
+por ejemplo:
+
+<li v-for="frutas of arrayFruta">
+    {{fruta}}
+</li> de esta forma estamos imprimiendo todas las posiciones del arrayFruta
+
+Ejemplo de sentencias condicionales
+
+<p>NOmbre: <span v-if="objeto.cantidad == 0">OUT OF STOCK</span></p>

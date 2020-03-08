@@ -15,7 +15,34 @@
   <body>
     <div id="app"> <!--Este es el container del que haremos uso para utilizar vue-->
         <h1>{{titulo}}</h1> <!--Estas dobles llaves son lo que se llama interpolación de vue. Podremos llamar, por ejemplo a la propiedad que tenemos dentro de data en el js (titulo)-->
-    </div>
+        
+        <!--Ahora queremos imprimir el array de frutas que tiene nuestra aplicación vue, para ello crearemos una ul (unordered list) e iteraremos-->
+        <ul>
+          <li v-for="fruta of arrayFrutas"> <!--Esta propiedad v-for es un loop que podemos utilizar gracias a vue-->
+            {{fruta}}
+          </li>
+        </ul>
+
+        <!--Ahora imprimiremos un array de objetos-->
+        <ul>
+          <li v-for="objeto of arrayObjetos">
+            <p>
+              Nombre: {{objeto.nombre}} <span v-if="objeto.cantidad == 0">- Sin Stock</span> <!--Igual que podemos poner un for para iterar, vue nos permite poner un if para crear condiciones. En este caso decimos que si la cantidad es 0, se esrcibirá un span que pone "sin stock"-->
+            </p>
+            <p>Cantidad: {{objeto.cantidad}}</p>
+          </li>
+        </ul>
+
+        <!--Ya hemos visto como crear una conexión desde javascript a html. Ahora veremos cómo hacerlo desde html a javascript-->
+        <input type="text" v-model="nuevaFruta"> <!--Con esta etiqueta creamos un recuadro donde el usuario puede introducir información. Con v-model podemos hacer una conexión directa ente este input y nuestro javascript pudiendo indicar el objeto de nuesta app de vue con el que queremos que se conecte (en este caso el objeto un string llamado nuevaFruta que encontraremos en nuestra aplicación vue)-->
+        
+        <!--Ahora comprobaremos que lo que escribimos en este input realmente cambia el valor del objeto nuevFruta de nuestra app vue-->
+
+        <p>La fruta se llama: {{nuevaFruta}}</p>
+
+        <button v-on:click="agregarFruta">Agregar Fruta</button> <!--Con v-on:click podemos especificar una función de nuestra app vue a la que queremos llamar-->
+        <button @click="agregarFruta">Prueba</button> <!--Esto hace lo mismo que lo de arriba, pero la sintaxis es más corta-->
+      </div>
 
     <script src="javascript.js"></script>
   </body>
