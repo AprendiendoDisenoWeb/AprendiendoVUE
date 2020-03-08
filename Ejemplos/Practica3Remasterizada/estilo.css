@@ -1,0 +1,28 @@
+
+.Cabecera {
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 25px;
+    color: black;
+    height: 30%;
+}
+
+.principal {
+    display: flex;
+}
+
+.derecha {
+    width: 50%;
+    background: #D3D3D3;
+    height: 1000px;
+}
+
+.izquierda {
+    width: 50%;
+    background: #1D90FF;
+    color: white;
+}
+
+
+  

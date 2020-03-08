@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/> <!--Especificamos cómo será el texto en nuestra página web-->
+        <meta name="description" content="Página de prueba HTML 5"/> <!--Damos una descripción para que los buscadores categoricen tu página web-->
+        <meta name="keywords" content="html5, css3, Javascript, diseño web"/>  <!--Antes esta etiqueta era muy importante.-->
+        <link rel="stylesheet" type="text/css" href="estilo.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+    </head>
+    <body>
+        <div id="app1">
+        <div class="Cabecera">
+            <img v-if="htmlMarcado == true" src="https://sso.unileon.es/themes/unileon-metronic/img/main-title.png" @click="counter++">
+            <h2>Ejercicio 1 de "{{nombre}}"</h2>
+        </div>
+
+        <div class="principal">
+            <div class="izquierda" id="izquierdaC">
+                <h2>Instrucciones ejercicio 1:</h2>
+                <p>Debes replicar este ejercicio en dos ficheros:</p>
+                <ul>
+                    <li>Fichero index.html con el código html, necesario para replicar este mismo contenido.</li>
+                    <li>Fichero style.css con el código CSS necesario para dar estilo al ejercicio</li>
+                </ul>
+                <p>Además, debes cumplir los siguentes puntos:</p>
+                <ul>
+                    <li>Utilizar Github Classroom para depositar el código fuente</li>
+                    <li>Modificar el encabezado del ejercicio con tu nombre</li>
+                    <li id="cambia">{{fraseCambia}}</li>
+                    <li>Contador de clicks en la imagen {{counter}}</li>
+                </ul>
+            </div>
+            <div class="derecha" id="derechaC">
+                <h2>Formulario:</h2>
+
+                <table>
+                    <tr>
+                        <td>
+                            <form>
+                                <label for="fname">Nombre:</label>
+                            </form>
+                        </td>
+                        <td>
+                            <form>
+                                <input type="text" id="fname" name="fname" v-model="nombre">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form>
+                                <label for="lname">Fecha de nacimiento:</label>
+                            </form>
+                        </td>
+                        <td>
+                            <form>
+                                <input type="date" id="laFechita" name="lname" v-model="fecha" v-on:change="calculaEdad">
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form>
+                                <label for="lname">Edad:</label>
+                            </form>
+                        </td>
+                        <td>
+                            <form>
+                                <input type="number" id="lname" name="lname" v-model="edad" disabled>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="female">Sexo:</label>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <input type="radio" id="female" name="gender" value="female" @click="cambiarColor(false)">
+                                        <label for="female">Hombre</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="radio" id="female" name="gender" value="female" @click="cambiarColor(true)">
+                                        <label for="female">Mujer</label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="female">Conoce HTML5</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" id="female" name="gender" value="female" @click="htmlMarcado = !htmlMarcado">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="female">Color favorito:</label>
+                        </td>
+                        <td>
+                            <input type="color" name="gender" v-model="colorDerecha" v-on:change="cambiarColorDerecha">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="female">Foto:</label>
+                        </td>
+                        <td>
+                            <input type="button" id="female" name="gender" value="Choose Files"> No file chosen</input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="button" id="female" name="gender" value="Enviar" @click=showAlert>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div> 
+        </div>
+        <script src="javascript.js"></script>
+    </body>
+</html>
+
+<!--<div class="split principal">
+            <div class="split derecha">
+                <h1>Derecha</h1>
+            </div>
+            <div class="split izquierda">
+                <h1>izquierda</h1>
+            </div>
+        </div>-->
